@@ -57,6 +57,36 @@ const init = () => {
       const cardContainer = document.createElement("div");
       cardContainer.innerHTML = newCard.name + " " + newCard.suit;
       document.getElementById("hand").appendChild(cardContainer);
+
+      console.log(handArr);
+      let score = 0;
+      console.log(score);
+      for (let i = 0; i < handArr.length; i++) {
+        if (handArr[i].name === "ace") {
+          score += 1;
+        } else if (handArr[i].name === "two") {
+          score += 2;
+        } else if (handArr[i].name === "three") {
+          score += 3;
+        } else if (handArr[i].name === "four") {
+          score += 4;
+        } else if (handArr[i].name === "five") {
+          score += 5;
+        } else if (handArr[i].name === "six") {
+          score += 6;
+        } else if (handArr[i].name === "seven") {
+          score += 7;
+        } else if (handArr[i].name === "eight") {
+          score += 8;
+        } else if (handArr[i].name === "nine") {
+          score += 9;
+        } else if (handArr[i].name === "ten") {
+          score += 10;
+        } else {
+          score += 10;
+        }
+      }
+      console.log(score);
     });
   });
 };
