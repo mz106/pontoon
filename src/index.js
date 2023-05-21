@@ -11,6 +11,9 @@ const cards = [
   "eight",
   "nine",
   "ten",
+  "jack",
+  "queen",
+  "king",
 ];
 
 function card(suit, name) {
@@ -31,4 +34,31 @@ const createDeck = (suits, cards, fn) => {
   return deck;
 };
 
-console.log(createDeck(suits, cards, card));
+const getCard = (deck) => {
+  const selectedCard = deck[Math.floor(Math.random() * deck.length)];
+  return selectedCard;
+};
+
+const init = () => {
+  const handArr = [];
+  document.addEventListener("DOMContentLoaded", () => {
+    let deck;
+    window.onload = deck = createDeck(suits, cards, card);
+
+    const dealBtn = document.getElementById("deal");
+
+    dealBtn.addEventListener("click", () => {
+      const newCard = getCard(deck);
+
+      deck = deck.filter((item) => item !== newCard);
+
+      handArr.push(newCard);
+      console.log(handArr);
+      const cardContainer = document.createElement("div");
+      cardContainer.innerHTML = newCard.name + " " + newCard.suit;
+      document.getElementById("hand").appendChild(cardContainer);
+    });
+  });
+};
+
+init();
