@@ -1,0 +1,56 @@
+body {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  height: 100vh;
+  color: white;
+}
+
+.title-container {
+  width: 50%;
+  border: 1px solid red;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.score-panel {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.score-display {
+  display: flex;
+}
+
+.hand-container {
+  height: 50px;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+}
+
+.hand {
+  display: flex;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  align-items: center;
+}
+
+.hand > div {
+  padding: 2px;
+  border: 2px solid white;
+  margin: 2px;
+}
+
+.active {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
