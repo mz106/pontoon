@@ -6,12 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Michael's Pontoon!!!</title>
     <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <div class="title-container">
+      <h1 class="title">Michael's Pontoon!!!</h1>
+    </div>
+    <div class="score-panel">
+      <div class="score-display">
+        <p>Score: <span id="score"></span></p>
+      </div>
+      <div>
+        <p>Wins: <span id="wins"></span></p>
+      </div>
+      <div>
+        <p>losses: <span id="losses"></span></p>
+      </div>
+    </div>
+    <div class="hand-container">
+      <div id="hand" class="hand"></div>
+    </div>
     <div>
-      <div><span id="score"></span></div>
-      <div id="hand"></div>
-      <button id="deal">Deal</button>
+      <button id="deal" class="active">Twist</button>
+      <button id="reset" class="hidden">Reset</button>
     </div>
   </body>
 </html>
