@@ -40,9 +40,13 @@ const getCard = (deck) => {
 };
 
 const init = () => {
-  const handArr = [];
   document.addEventListener("DOMContentLoaded", () => {
     let deck;
+    let score = 0;
+    const handArr = [];
+    console.log(score);
+    const scoreBoard = document.getElementById("score");
+    scoreBoard.innerHTML = score;
     window.onload = deck = createDeck(suits, cards, card);
 
     const dealBtn = document.getElementById("deal");
@@ -58,9 +62,7 @@ const init = () => {
       cardContainer.innerHTML = newCard.name + " " + newCard.suit;
       document.getElementById("hand").appendChild(cardContainer);
 
-      console.log(handArr);
-      let score = 0;
-      console.log(score);
+      score = 0;
       for (let i = 0; i < handArr.length; i++) {
         if (handArr[i].name === "ace") {
           score += 1;
@@ -86,7 +88,12 @@ const init = () => {
           score += 10;
         }
       }
-      console.log(score);
+      scoreBoard.innerHTML = score;
+      if (score === 21) {
+        console.log("winner");
+      } else if (score >= 21) {
+        console.log("bust");
+      }
     });
   });
 };
